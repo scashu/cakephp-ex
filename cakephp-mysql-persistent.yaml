@@ -26,7 +26,8 @@ spec:
   runPolicy: Serial
   source:
     git:
-      uri: 'https://github.com/openshift/cakephp-ex.git'
+#      uri: 'https://github.com/openshift/cakephp-ex.git'
+      uri: 'https://github.com/scashu/cakephp-ex.git'
     type: Git
   strategy:
     sourceStrategy:

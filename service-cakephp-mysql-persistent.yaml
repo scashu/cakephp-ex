@@ -1,0 +1,28 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    description: Exposes and load balances the application pods
+    service.alpha.openshift.io/dependencies: '[{"name": "mysql", "kind": "Service"}]'
+  creationTimestamp: '2018-02-03T21:09:42Z'
+  labels:
+    app: cakephp-mysql-persistent
+    template: cakephp-mysql-persistent
+  name: cakephp-mysql-persistent
+  namespace: sc-php-mysql
+  resourceVersion: '2001377058'
+  selfLink: /api/v1/namespaces/sc-php-mysql/services/cakephp-mysql-persistent
+  uid: 8de6a288-0926-11e8-862c-0ab8769191d3
+spec:
+  clusterIP: 172.30.96.172
+  ports:
+    - name: web
+      port: 8080
+      protocol: TCP
+      targetPort: 8080
+  selector:
+    name: cakephp-mysql-persistent
+  sessionAffinity: None
+  type: ClusterIP
+status:
+  loadBalancer: {}

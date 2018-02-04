@@ -1,0 +1,33 @@
+apiVersion: v1
+kind: Route
+metadata:
+  annotations:
+    openshift.io/host.generated: 'true'
+  creationTimestamp: '2018-02-04T02:16:41Z'
+  labels:
+    app: cakephp-mysql-persistent
+    template: cakephp-mysql-persistent
+  name: scashu
+  namespace: sc-php-mysql
+  resourceVersion: '2001911076'
+  selfLink: /oapi/v1/namespaces/sc-php-mysql/routes/scashu
+  uid: 6ff3133e-0951-11e8-918b-0a69cdf75e6f
+spec:
+  host: scashu-sc-php-mysql.7e14.starter-us-west-2.openshiftapps.com
+  port:
+    targetPort: web
+  to:
+    kind: Service
+    name: scashu
+    weight: 100
+  wildcardPolicy: None
+status:
+  ingress:
+    - conditions:
+        - lastTransitionTime: '2018-02-04T02:16:41Z'
+          status: 'True'
+          type: Admitted
+      host: scashu-sc-php-mysql.7e14.starter-us-west-2.openshiftapps.com
+      routerCanonicalHostname: elb.7e14.starter-us-west-2.openshiftapps.com
+      routerName: router
+      wildcardPolicy: None
